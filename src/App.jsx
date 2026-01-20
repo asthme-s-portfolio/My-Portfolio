@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import HomePage from './componets/Home';
+import AboutPage from './componets/About';
+import ProjectsPage from './componets/Projects';
+import SkillsPage from './componets/Skills';
+import ContactPage from './componets/Contact';
+import Sidebar from './componets/Sidebar';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [activeSection, setActiveSection] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const renderPage = () => {
+    switch (activeSection) {
+      case 'home':
+        return <HomePage setActiveSection={setActiveSection} />;
+      case 'about':
+        return <AboutPage />;
+      case 'projects':
+        return <ProjectsPage  setActiveSection={setActiveSection} />;
+      case 'skills':
+        return <SkillsPage />;
+      case 'contact':
+        return <ContactPage />;
+      default:
+        return <HomePage setActiveSection={setActiveSection} />;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
+      <Sidebar
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+      />
+      
+      <main className="lg:ml-24 px-6 lg:px-12">
+        {renderPage()}
+      </main>
+    </div>
+  );
 }
-
-export default App
