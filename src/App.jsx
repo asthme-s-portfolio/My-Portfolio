@@ -4,7 +4,7 @@ import AboutPage from './components/About';
 import ProjectsPage from './components/Projects';
 import SkillsPage from './components/Skills';
 import ContactPage from './components/Contact';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/sidebar';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
