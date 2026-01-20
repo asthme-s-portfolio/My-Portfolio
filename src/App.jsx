@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import HomePage from './componets/Home';
-import AboutPage from './componets/About';
-import ProjectsPage from './componets/Projects';
-import SkillsPage from './componets/Skills';
-import ContactPage from './componets/Contact';
-import Sidebar from './componets/Sidebar';
+import HomePage from './components/Home';
+import AboutPage from './components/About';
+import ProjectsPage from './components/Projects';
+import SkillsPage from './components/Skills';
+import ContactPage from './components/Contact';
+import Sidebar from './components/Sidebar';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -17,7 +17,7 @@ export default function App() {
       case 'about':
         return <AboutPage />;
       case 'projects':
-        return <ProjectsPage  setActiveSection={setActiveSection} />;
+        return <ProjectsPage setActiveSection={setActiveSection} />;
       case 'skills':
         return <SkillsPage />;
       case 'contact':
