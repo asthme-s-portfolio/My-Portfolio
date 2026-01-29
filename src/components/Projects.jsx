@@ -3,7 +3,7 @@ import { Code, ExternalLink, Github } from 'lucide-react';
 function ProjectsPage({ setActiveSection }) {
   const projects = [
     {
-      title: 'OneSpan',
+      title: 'Race Registration & Management System',
       description: 'An online booking system for marathons that allows seamless registration and secure payment processing for runners and event organizers.',
       tech: ['React', 'Vite', 'Material UI', 'PostgreSQL', 'NestJS'],
       image: '/src/assets/onespan.jpeg',
@@ -20,9 +20,17 @@ function ProjectsPage({ setActiveSection }) {
     },
     {
       title: 'Personal Portfolio',
-      description: 'My personal portfolio website showcasing my projects, skills, and experience as a front-end developer with modern design and animations.',
+      description: 'My personal portfolio website showcasing my projects, skills, and experience as a software developer with modern design and animations.',
       tech: ['React', 'Tailwind CSS', 'Lucide Icons'],
-      image: '/kaasa.png',
+      image: '/Kaasa.jpeg',
+      link: '#',
+      github: '#'
+    },
+     {
+      title: 'Solar Tracking System ',
+      description: 'Arduino-based solar-powered prototype designed to demonstrate basic energy harvesting and control. It uses an Arduino microcontroller to monitor and manage power from a small solar panel, with supporting components such as sensors, wiring, and a battery for storage. The system is mounted on a custom frame to showcase how Arduino can be used to build simple renewable energy and automation projects.',
+      tech: ['Arduino', 'C++', 'Electronics'],
+      image: '/src/assets/solar.jpeg',
       link: '#',
       github: '#'
     }

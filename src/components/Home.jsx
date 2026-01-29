@@ -56,7 +56,7 @@ function HomePage({ setActiveSection }) {
           <div className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-white shadow-2xl transform group-hover:scale-105 transition-transform duration-300 bg-white">
             <div className="w-full h-full relative">
               <img 
-                src="/kaasa.png" 
+                src="/Kaasa.jpeg" 
                 alt="Kaasa Asthme" 
                 className="w-full h-full object-cover"
               />
@@ -116,14 +116,13 @@ function HomePage({ setActiveSection }) {
           {/* Subtitle with typing effect visual */}
           <div className="relative">
             <h2 className="text-2xl lg:text-3xl font-bold text-gray-800 flex items-center justify-center lg:justify-start gap-2">
-              Front-End Developer
+              Full Stack focus Frontend 
             </h2>
           </div>
 
           {/* Description */}
           <p className="text-gray-600 text-lg leading-relaxed max-w-xl">
-            Crafting pixel-perfect, responsive web experiences with modern technologies. 
-            I transform ideas into elegant, user-friendly interfaces that make an impact.
+            I am a software developer with a strong interest in building practical, user-focused systems. I enjoy working with web technologies to design and develop applications that solve real-world problems. I have experience building management systems, dashboards, and full-stack applications, and I’m continuously learning to improve my skills.
           </p>
 
           {/* Skills badges - Interactive buttons */}
@@ -171,7 +170,7 @@ function HomePage({ setActiveSection }) {
               <Linkedin className="text-purple-600 group-hover:text-white transition-colors" size={24} />
             </a>
             <a 
-              href="https://github.com" 
+              href="https://github.com/Asthme256/" 
               target="_blank"
               rel="noopener noreferrer"
               className="group p-4 bg-white rounded-full hover:bg-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"

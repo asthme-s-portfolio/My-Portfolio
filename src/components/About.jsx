@@ -52,12 +52,12 @@ function AboutPage() {
         {/* Bio Card */}
         <div className={`bg-white rounded-2xl shadow-lg p-8 lg:p-12 mb-12 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
-            Hi, I'm a Frontend Developer
+            Hi, I'm Kaasa Asthme
           </h2>
           
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p className="text-lg">
-              I'm a passionate frontend developer specializing in creating beautiful, responsive, and user-friendly web applications. With a keen eye for design and a strong foundation in modern web technologies, I transform ideas into engaging digital experiences.
+              I'm a passionate software developer specializing in creating beautiful, responsive, and user-friendly web applications. With a keen eye for design and a strong foundation in modern web technologies, I transform ideas into engaging digital experiences.
             </p>
             
             <p className="text-lg">

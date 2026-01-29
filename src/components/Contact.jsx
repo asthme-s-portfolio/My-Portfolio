@@ -66,14 +66,14 @@ function ContactPage() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'kaasa@example.com',
-      link: 'mailto:kaasa@example.com'
+      value: 'asthmekaasa@gmail.com',
+      link: 'mailto:asthmekaasa@gmail.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+256 700 000 000',
-      link: 'tel:+256700000000'
+      value: '+256 744 542 446',
+      link: 'tel:+256744542446'
     },
     {
       icon: MapPin,
@@ -84,9 +84,9 @@ function ContactPage() {
   ];
 
   const socialLinks = [
-    { icon: Github, link: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, link: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, link: 'https://twitter.com', label: 'Twitter' },
+    { icon: Github, link: 'https://github.com/Asthme256/ ', label: 'GitHub' },
+    { icon: Linkedin, link: 'https://www.linkedin.com/in/kaasa-asthme-4b335634b/', label: 'LinkedIn' },
+    // { icon: Twitter, link: 'https://twitter.com', label: 'Twitter' },
   ];
 
   return (
@@ -98,7 +98,7 @@ function ContactPage() {
             Let's Work Together
           </h1>
           <p className="text-gray-600 text-xl max-w-2xl mx-auto leading-relaxed">
-            Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
+            Have a project in mind? I would love to hear about it. Send me a message and let's create something amazing together.
           </p>
         </div>
 
@@ -202,7 +202,7 @@ function ContactPage() {
                             ? 'border-purple-600' 
                             : 'border-gray-200'
                         } focus:outline-none transition-all`}
-                        placeholder="John Doe"
+                        placeholder=""
                       />
                       {errors.name && (
                         <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
@@ -230,7 +230,7 @@ function ContactPage() {
                             ? 'border-purple-600' 
                             : 'border-gray-200'
                         } focus:outline-none transition-all`}
-                        placeholder="john@example.com"
+                        placeholder=""
                       />
                       {errors.email && (
                         <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
@@ -254,7 +254,7 @@ function ContactPage() {
                         className={`w-full px-4 py-3 rounded-xl border-2 ${
                           focusedField === 'subject' ? 'border-purple-600' : 'border-gray-200'
                         } focus:outline-none transition-all`}
-                        placeholder="Project Inquiry"
+                        placeholder=""
                       />
                     </div>
 
@@ -277,7 +277,7 @@ function ContactPage() {
                             ? 'border-purple-600' 
                             : 'border-gray-200'
                         } focus:outline-none transition-all resize-none`}
-                        placeholder="Tell me about your project or idea..."
+                        placeholder=""
                       />
                       {errors.message && (
                         <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
