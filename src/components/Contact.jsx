@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle, Clock, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageCircle, CheckCircle, Clock, ArrowRight } from 'lucide-react';
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,13 @@ function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
   const [focusedField, setFocusedField] = useState(null);
+
+  // Helper function to encode data for Netlify
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -41,17 +48,28 @@ function ContactPage() {
     
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitted(false);
-    }, 3000);
+    try {
+      // Send data to Netlify
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData })
+      });
+
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsSubmitted(false);
+      }, 3000);
+
+    } catch (error) {
+      console.error(error);
+      setIsSubmitting(false);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   const handleChange = (e) => {
@@ -84,9 +102,9 @@ function ContactPage() {
   ];
 
   const socialLinks = [
-    { icon: Github, link: 'https://github.com/Asthme256/ ', label: 'GitHub' },
+    { icon: Github, link: 'https://github.com/Asthme256/', label: 'GitHub' },
     { icon: Linkedin, link: 'https://www.linkedin.com/in/kaasa-asthme-4b335634b/', label: 'LinkedIn' },
-    // { icon: Twitter, link: 'https://twitter.com', label: 'Twitter' },
+    { icon: MessageCircle, link: 'https://wa.me/256744542446', label: 'MessageCircle' },
   ];
 
   return (
@@ -98,7 +116,7 @@ function ContactPage() {
             Let's Work Together
           </h1>
           <p className="text-gray-600 text-xl max-w-2xl mx-auto leading-relaxed">
-            Have a project in mind? I would love to hear about it. Send me a message and let's create something amazing together.
+            Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
           </p>
         </div>
 
@@ -182,7 +200,17 @@ function ContactPage() {
                   <h2 className="text-3xl font-bold text-gray-800 mb-2">Send a Message</h2>
                   <p className="text-gray-600 mb-8">Fill out the form below and I'll respond shortly.</p>
                   
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* IMPORTANT: name="contact" and data-netlify="true" added here */}
+                  <form 
+                    name="contact" 
+                    method="POST" 
+                    data-netlify="true" 
+                    onSubmit={handleSubmit} 
+                    className="space-y-6"
+                  >
+                    {/* IMPORTANT: Hidden input for Netlify bot detection */}
+                    <input type="hidden" name="form-name" value="contact" />
+
                     {/* Name Input */}
                     <div>
                       <label className="block text-gray-700 font-semibold mb-2 text-sm">
@@ -202,7 +230,7 @@ function ContactPage() {
                             ? 'border-purple-600' 
                             : 'border-gray-200'
                         } focus:outline-none transition-all`}
-                        placeholder=""
+                        placeholder="John Doe"
                       />
                       {errors.name && (
                         <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
@@ -230,7 +258,7 @@ function ContactPage() {
                             ? 'border-purple-600' 
                             : 'border-gray-200'
                         } focus:outline-none transition-all`}
-                        placeholder=""
+                        placeholder="john@example.com"
                       />
                       {errors.email && (
                         <p className="text-red-500 text-sm mt-2 flex items-center gap-1">
@@ -254,7 +282,7 @@ function ContactPage() {
                         className={`w-full px-4 py-3 rounded-xl border-2 ${
                           focusedField === 'subject' ? 'border-purple-600' : 'border-gray-200'
                         } focus:outline-none transition-all`}
-                        placeholder=""
+                        placeholder="Project Inquiry"
                       />
                     </div>
 
@@ -277,7 +305,7 @@ function ContactPage() {
                             ? 'border-purple-600' 
                             : 'border-gray-200'
                         } focus:outline-none transition-all resize-none`}
-                        placeholder=""
+                        placeholder="Tell me about your project or idea..."
                       />
                       {errors.message && (
                         <p className="text-red-500 text-sm mt-2 flex items-center gap-1">

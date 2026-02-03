@@ -1,4 +1,4 @@
-import { Linkedin, Github, Twitter, Mail, ArrowDown, Sparkles } from 'lucide-react';
+import { Linkedin, Github, MessageCircle, Mail, ArrowDown, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 function HomePage({ setActiveSection }) {
@@ -178,12 +178,12 @@ function HomePage({ setActiveSection }) {
               <Github className="text-purple-600 group-hover:text-white transition-colors" size={24} />
             </a>
             <a 
-              href="https://twitter.com" 
+              href="https://wa.me/256744542446" 
               target="_blank"
               rel="noopener noreferrer"
               className="group p-4 bg-white rounded-full hover:bg-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110"
             >
-              <Twitter className="text-purple-600 group-hover:text-white transition-colors" size={24} />
+              <MessageCircle className="text-purple-600 group-hover:text-white transition-colors" size={24} />
             </a>
           </div>
         </div>
