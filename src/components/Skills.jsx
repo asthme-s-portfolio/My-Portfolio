@@ -10,7 +10,6 @@ const TechLogo = ({ name, level, color, delay = 0 }) => {
   const logoMap = {
     "React": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     "JavaScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    "TypeScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     "HTML5": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     "CSS3": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     "Tailwind CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
@@ -18,13 +17,12 @@ const TechLogo = ({ name, level, color, delay = 0 }) => {
     "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     "Express": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
     "PostgreSQL": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    "Git": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     "GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
     "VS Code": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
     "Figma": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     "Oracle": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg",
     "NestJS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
-    "Python": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    
   };
 
   return (
@@ -101,19 +99,16 @@ function SkillsPage() {
     { name: "React", level: 80, color: "#61DAFB" },
     { name: "JavaScript", level: 85, color: "#F7DF1E" },
     { name: "HTML5", level: 95, color: "#E34F26" },
-    {name: "TypeScript", level: 50, color: "#3178C6" },
     { name: "CSS3", level: 95, color: "#1572B6" },
     { name: "Tailwind CSS", level: 65, color: "#06B6D4" },
     { name: "Oracle", level: 80, color: "#764ABC" },
     { name: "Node.js", level: 85, color: "#339933" },
     { name: "Express", level: 78, color: "#000000" },
     { name: "PostgreSQL", level: 70, color: "#4169E1" },
-    { name: "Git", level: 65, color: "#F05032" },
     { name: "GitHub", level: 90, color: "#181717" },
     { name: "VS Code", level: 95, color: "#007ACC" },
-    { name: "Figma", level: 80, color: "#F24E1E" },
+    { name: "Figma", level: 70, color: "#F24E1E" },
     { name: "NestJS", level: 60, color: "#C21325" },
-    { name: "Python", level: 50, color: "#3776AB" },
     { name: "Material UI", level: 75, color: "#8DD6F9" },
   ];
 
