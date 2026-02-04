@@ -6,7 +6,7 @@ function ProjectsPage({ setActiveSection }) {
       title: 'Race Registration & Management System',
       description: 'An online booking system for marathons that allows seamless registration and secure payment processing for runners and event organizers.',
       tech: ['React', 'Vite', 'Material UI', 'PostgreSQL', 'NestJS'],
-      image: '/src/assets/onespan.jpeg',
+      image: '/onespan.jpeg',
       link: '#',
       github: '#'
     },
@@ -14,7 +14,7 @@ function ProjectsPage({ setActiveSection }) {
       title: 'School Admissions Portal',
       description: 'A comprehensive school management system for handling student admissions, enrollment, and administrative processes.',
       tech: ['HTML', 'CSS', 'PHP'],
-      image: '/src/assets/school.png',
+      image: '/school.png',
       link: '#',
       github: '#'
     },
@@ -30,7 +30,7 @@ function ProjectsPage({ setActiveSection }) {
       title: 'Solar Tracking System ',
       description: 'Arduino-based solar-powered prototype designed to demonstrate basic energy harvesting and control. It uses an Arduino microcontroller to monitor and manage power from a small solar panel, with supporting components such as sensors, wiring, and a battery for storage. The system is mounted on a custom frame to showcase how Arduino can be used to build simple renewable energy and automation projects.',
       tech: ['Arduino', 'C++', 'Electronics'],
-      image: '/src/assets/solar.jpeg',
+      image: '/solar.jpeg',
       link: '#',
       github: '#'
     }
