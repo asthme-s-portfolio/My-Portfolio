@@ -100,7 +100,6 @@ function SkillsPage() {
     { name: "JavaScript", level: 85, color: "#F7DF1E" },
     { name: "HTML5", level: 95, color: "#E34F26" },
     { name: "CSS3", level: 95, color: "#1572B6" },
-    { name: "Tailwind CSS", level: 65, color: "#06B6D4" },
     { name: "Oracle", level: 80, color: "#764ABC" },
     { name: "Node.js", level: 85, color: "#339933" },
     { name: "Express", level: 78, color: "#000000" },
