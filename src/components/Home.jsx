@@ -20,7 +20,7 @@ function HomePage({ setActiveSection }) {
     };
   }, []);
 
-  const skills = ['React', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'Node.js', 'Git'];
+  const skills = ['React','Material UI', 'JavaScript', 'Node.js', 'GitHub', ];
 
   const handleGetInTouch = () => {
     if (setActiveSection) {

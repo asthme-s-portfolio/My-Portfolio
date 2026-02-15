@@ -85,7 +85,7 @@ function ProjectsPage({ setActiveSection }) {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  <a
+                  {/* <a
                     href={project.link}
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300 group/btn"
                   >
@@ -98,7 +98,7 @@ function ProjectsPage({ setActiveSection }) {
                     title="View on GitHub"
                   >
                     <Github size={18} />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
