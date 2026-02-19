@@ -11,6 +11,14 @@ function Sidebar({ activeSection, setActiveSection, isMobileMenuOpen, setIsMobil
     { id: 'contact', icon: Mail, label: 'Contact' }
   ];
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <button
@@ -31,10 +39,7 @@ function Sidebar({ activeSection, setActiveSection, isMobileMenuOpen, setIsMobil
           {menuItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => {
-                setActiveSection(item.id);
-                setIsMobileMenuOpen(false);
-              }}
+              onClick={() => scrollToSection(item.id)}
               className={`p-3 rounded-lg transition-all ${
                 activeSection === item.id
                   ? 'bg-white/20 scale-110'

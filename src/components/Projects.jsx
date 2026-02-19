@@ -19,6 +19,14 @@ function ProjectsPage({ setActiveSection }) {
       github: '#'
     },
     {
+      title: 'Library Management System',
+      description: 'A web-based library management system for managing books, members, and borrowing records with an intuitive interface.',
+      tech: ['HTML', 'CSS', 'PHP'],
+      image: '/library.jpg',
+      link: '#',
+      github: '#'
+    },
+    {
       title: 'Personal Portfolio',
       description: 'My personal portfolio website showcasing my projects, skills, and experience as a software developer with modern design and animations.',
       tech: ['React', 'Tailwind CSS', 'Lucide Icons'],
@@ -85,20 +93,7 @@ function ProjectsPage({ setActiveSection }) {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  {/* <a
-                    href={project.link}
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-all duration-300 group/btn"
-                  >
-                    View Project
-                    <ExternalLink size={16} className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-purple-600 hover:text-purple-600 transition-all duration-300"
-                    title="View on GitHub"
-                  >
-                    <Github size={18} />
-                  </a> */}
+              
                 </div>
               </div>
             </div>
@@ -115,7 +110,12 @@ function ProjectsPage({ setActiveSection }) {
               I'm always open to discussing new projects and creative ideas.
             </p>
             <button
-              onClick={() => setActiveSection && setActiveSection('contact')}
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-purple-600 text-white rounded-xl font-bold text-lg hover:bg-purple-700 hover:shadow-xl transition-all duration-300 group"
             >
               Get In Touch

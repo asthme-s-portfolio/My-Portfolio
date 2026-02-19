@@ -23,8 +23,9 @@ function HomePage({ setActiveSection }) {
   const skills = ['React','Material UI', 'JavaScript', 'Node.js', 'GitHub', ];
 
   const handleGetInTouch = () => {
-    if (setActiveSection) {
-      setActiveSection('contact');
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 

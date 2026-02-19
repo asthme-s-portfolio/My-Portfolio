@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HomePage from './components/Home';
 import AboutPage from './components/About';
 import ProjectsPage from './components/Projects';
@@ -10,22 +10,26 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const renderPage = () => {
-    switch (activeSection) {
-      case 'home':
-        return <HomePage setActiveSection={setActiveSection} />;
-      case 'about':
-        return <AboutPage />;
-      case 'projects':
-        return <ProjectsPage setActiveSection={setActiveSection} />;
-      case 'skills':
-        return <SkillsPage />;
-      case 'contact':
-        return <ContactPage />;
-      default:
-        return <HomePage setActiveSection={setActiveSection} />;
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'projects', 'skills', 'contact'];
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
@@ -36,8 +40,12 @@ export default function App() {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
       
-      <main className="lg:ml-24 px-6 lg:px-12">
-        {renderPage()}
+      <main className="lg:ml-24">
+        <section id="home"><HomePage setActiveSection={setActiveSection} /></section>
+        <section id="about"><AboutPage /></section>
+        <section id="projects"><ProjectsPage setActiveSection={setActiveSection} /></section>
+        <section id="skills"><SkillsPage /></section>
+        <section id="contact"><ContactPage /></section>
       </main>
     </div>
   );
